@@ -2,7 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/dreaser/.oh-my-zsh
+export ZSH=/home/dreaser/.oh-my-zsh
+
+# Vim as default editor 
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
