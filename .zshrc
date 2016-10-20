@@ -11,7 +11,17 @@ export VISUAL=/usr/bin/vim
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="risto"
+#ZSH_THEME="jnrowe"
+ZSH_THEME="lukerandall"
+#autres themes a tester : 
+#nanotech
+#minimal
+#skaro
+#sunrise
+#terminalparty
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -91,3 +101,5 @@ source $ZSH/oh-my-zsh.sh
 # Always launch tmux
 function ssh_tmux() { ssh -t "$1" tmux a || ssh -t "$1" tmux; }
 
+# Do not freeze when Ctrl-S
+stty -ixon
