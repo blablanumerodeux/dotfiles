@@ -163,6 +163,7 @@ for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggl
 
 new_window none
 
-# default layout for new windows <default|stacking|tabbed>
+focus_follows_mouse no
 
+# default layout for new windows <default|stacking|tabbed>
 workspace_layout tabbed
