@@ -4,23 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/dreaser/.oh-my-zsh
 
-# Vim as default editor
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="risto"
-#ZSH_THEME="jnrowe"
-ZSH_THEME="lukerandall"
-#autres themes a tester :
-#nanotech
-#minimal
-#skaro
-#sunrise
-#terminalparty
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -77,6 +64,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -85,11 +76,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -105,9 +96,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias ll="ll -la"
+alias vi="nvim"
+alias vim="nvim"
+# create or attach the session called shared
+alias tm="tmux"
+#alias tm="tmux new-session -A -s shared"
+#alias tma="tmux attach-session -t shared"
+#tmux attach
+#alias ll="ls -lart"
+alias sshlist="sed -rn 's/^\s*Host\s+(.*)\s*/\1/ip' ~/.ssh/config"
 
-# Always launch tmux
-function ssh_tmux() { ssh -t "$1" tmux a || ssh -t "$1" tmux; }
 
-# Do not freeze when Ctrl-S
-stty -ixon
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/dreaser/.sdkman"
+[[ -s "/home/dreaser/.sdkman/bin/sdkman-init.sh" ]] && source "/home/dreaser/.sdkman/bin/sdkman-init.sh"
+
+
+# if we're not already in TMUX
+if [[ ! "$TERM" =~ "screen" ]]; then
+	tmux attach;
+else
+	tmux rename-session main;
+fi
+
