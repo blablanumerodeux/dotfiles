@@ -10,5 +10,7 @@ fi
 searchterm=$(echo $searchterm | sed -e 's/\ /+/g')
 
 #alias ly="lynx -cfg=~/.config/lynx.cfg "
-lynx -cfg=~/.config/lynx.cfg https://duckduckgo.com/lite?q=$searchterm
+#lynx -cfg=~/.config/lynx.cfg https://duckduckgo.com/lite?q=$searchterm
+w3m https://duckduckgo.com/lite?q=$searchterm
+
 
