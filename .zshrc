@@ -106,7 +106,8 @@ alias tma="tmux attach"
 #tmux attach
 alias ll="ls -larti"
 alias sshlist="sed -rn 's/^\s*Host\s+(.*)\s*/\1/ip' ~/.ssh/config"
-alias ly="~/bin/ly"
+alias w3="~/bin/ly"
+alias gs="git status"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
