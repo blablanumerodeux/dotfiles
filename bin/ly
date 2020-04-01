@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $(echo $*) ]]; then
+    searchterm="$*"
+
+else
+    read -p "Enter your search term: " searchterm
+fi
+
+searchterm=$(echo $searchterm | sed -e 's/\ /+/g')
+
+#alias ly="lynx -cfg=~/.config/lynx.cfg "
+lynx -cfg=~/.config/lynx.cfg https://duckduckgo.com/lite?q=$searchterm
+

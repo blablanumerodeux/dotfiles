@@ -102,10 +102,11 @@ alias vim="nvim"
 # create or attach the session called shared
 alias tm="tmux"
 #alias tm="tmux new-session -A -s shared"
-#alias tma="tmux attach-session -t shared"
+alias tma="tmux attach"
 #tmux attach
-#alias ll="ls -lart"
+alias ll="ls -larti"
 alias sshlist="sed -rn 's/^\s*Host\s+(.*)\s*/\1/ip' ~/.ssh/config"
+alias ly="~/bin/ly"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
