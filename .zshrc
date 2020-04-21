@@ -7,7 +7,14 @@ export ZSH=/home/dreaser/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="candy"
+
+# PS1 and right PS1
+#PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
+#RPROMPT='[%F{yellow}%?%f]'
+autoload -Uz promptinit
+promptinit
+
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,6 +67,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,3 +130,4 @@ else
 	tmux rename-session main;
 fi
 
+bindkey -v
